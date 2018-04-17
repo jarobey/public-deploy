@@ -8,12 +8,6 @@
               "description": "The name of the Managed Cluster resource."
           }
       },
-      "dnsPrefix": {
-          "type": "string",
-          "metadata": {
-              "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
-          }
-      },
       "osDiskSizeGB": {
           "type": "int",
           "defaultValue": 0,
@@ -166,7 +160,6 @@
       "osDiskSizeGB": "[parameters('osDiskSizeGB')]",
       "agentCount": "[parameters('agentCount')]",
       "agentVMSize": "[parameters('agentVMSize')]",
-      "dnsPrefix": "[parameters('dnsPrefix')]",
       "sshRSAPublicKey": "[parameters('sshRSAPublicKey')]",
       "servicePrincipalClientId": "[parameters('servicePrincipalClientId')]",
       "servicePrincipalClientSecret": "[parameters('servicePrincipalClientSecret')]",
@@ -181,7 +174,6 @@
           "name": "[variables('resourceName')]",
           "properties": {
               "kubernetesVersion": "[variables('kubernetesVersion')]",
-              "dnsPrefix": "[variables('dnsPrefix')]",
               "agentPoolProfiles": [
                   {
                       "name": "agentpool",
